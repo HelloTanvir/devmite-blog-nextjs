@@ -4,7 +4,7 @@ import { AiOutlineTwitter } from 'react-icons/ai';
 import { IoLogoInstagram } from 'react-icons/io';
 import { TiSocialFacebook } from 'react-icons/ti';
 import Logo from './Logo';
-import MobileNav from './MobileNav';
+import Nav from './Nav';
 import SearchBar from './SearchBar';
 
 const headerDetails = { logoName: 'Devmite.com' };
@@ -22,8 +22,8 @@ const headerNavLinks = [
 
 function Header() {
     return (
-        <div className="container flex justify-between mx-auto lg:flex-col">
-            <header className="flex flex-col lg:flex-row lg:items-center gap-5 py-[30px]">
+        <div className="container flex justify-between lg:block">
+            <header className="flex flex-col gap-5 lg:flex-row lg:items-center py-[30px]">
                 {/* left */}
                 <div className="flex-1">
                     {/* logo */}
@@ -49,16 +49,8 @@ function Header() {
                 <SearchBar />
             </header>
 
-            <MobileNav />
-
             {/* menu/tab */}
-            <nav className="sticky top-0 hidden lg:flex gap-10 py-2 text-[.85rem]">
-                {headerNavLinks.map((link) => (
-                    <Link key={link.title} href={link.href}>
-                        <span className="uppercase cursor-pointer">{link.title}</span>
-                    </Link>
-                ))}
-            </nav>
+            <Nav headerNavLinks={headerNavLinks} />
         </div>
     );
 }
