@@ -1,6 +1,4 @@
-import React from "react";
-import Link from "next/link";
-import axios from "axios";
+import React from 'react';
 
 // export const getStaticProps = async () => {
 //   const result = await axios.get("http://127.0.0.1:8000/blog/posts/");
@@ -12,12 +10,12 @@ import axios from "axios";
 // };
 
 function PostCard(post) {
-  console.log(post);
-  return (
-    <div>
-      <p>ash</p>
-    </div>
-  );
+    console.log(post);
+    return (
+        <div>
+            <p>ash</p>
+        </div>
+    );
 }
 
 export default PostCard;

@@ -1,17 +1,14 @@
 // import "tailwindcss/tailwind.css";
-import "../styles/globals.css";
-
 // function MyApp({ Component, pageProps }) {
 //   return <Component {...pageProps} />
 // }
-
 // export default MyApp
-
 // import "@/css/tailwind.css";
 // import '@/css/prism.css'
+import { ThemeProvider } from 'next-themes';
+import Layout from '../components/Layout';
+import '../styles/globals.css';
 
-import { ThemeProvider } from "next-themes";
-import Layout from "../components/Layout";
 // import Head from "next/head";
 
 // import Analytics from "@/components/analytics";
@@ -22,16 +19,16 @@ import Layout from "../components/Layout";
 // const isSocket = process.env.SOCKET;
 
 export default function App({ Component, pageProps }) {
-  return (
-    <ThemeProvider enableSystem={true} attribute="class">
-      {/* <Head>
+    return (
+        <ThemeProvider enableSystem attribute="class">
+            {/* <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head> */}
-      {/* {isDevelopment && isSocket && <ClientReload />} */}
-      {/* <Analytics /> */}
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
-  );
+            {/* {isDevelopment && isSocket && <ClientReload />} */}
+            {/* <Analytics /> */}
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
+        </ThemeProvider>
+    );
 }
