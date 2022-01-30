@@ -10,19 +10,11 @@ interface Props {
     }[];
 }
 
-const Nav = ({ headerNavLinks }: Props) => {
+const NavMobile = ({ headerNavLinks }: Props) => {
     const [open, setOpen] = useState(false);
 
     return (
         <>
-            <nav className="hidden lg:flex gap-10 py-4 text-[.85rem] border-b">
-                {headerNavLinks.map((link) => (
-                    <Link key={link.title} href={link.href}>
-                        <span className="uppercase cursor-pointer">{link.title}</span>
-                    </Link>
-                ))}
-            </nav>
-
             <button
                 type="button"
                 className="cursor-pointer lg:hidden h-[30px] py-[30px]"
@@ -66,4 +58,4 @@ const Nav = ({ headerNavLinks }: Props) => {
     );
 };
 
-export default Nav;
+export default NavMobile;
