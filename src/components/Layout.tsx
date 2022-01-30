@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer';
 import Header from './Header';
 
 function Layout({ children }) {
@@ -6,7 +7,7 @@ function Layout({ children }) {
         <div className="flex flex-col justify-between h-screen">
             <Header />
             <main className="mb-auto">{children}</main>
-            {/* <Footer /> */}
+            <Footer />
         </div>
     );
 }
