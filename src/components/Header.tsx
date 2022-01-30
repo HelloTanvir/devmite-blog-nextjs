@@ -1,70 +1,65 @@
 import Link from 'next/link';
 import React from 'react';
+import { AiOutlineTwitter } from 'react-icons/ai';
+import { IoLogoInstagram } from 'react-icons/io';
+import { TiSocialFacebook } from 'react-icons/ti';
 import Logo from './Logo';
 import MobileNav from './MobileNav';
 import SearchBar from './SearchBar';
-import ThemeSwitch from './ThemeSwitch';
-import UserLogin from './UserLogin';
 
-// to test the data
 const headerDetails = { logoName: 'Devmite.com' };
+
 const headerNavLinks = [
-    { href: '/blog', title: 'Blog' },
-    { href: '/tags', title: 'Tags' },
-    { href: '/projects', title: 'Projects' },
-    { href: '/about', title: 'About' },
+    { href: '/home', title: 'home' },
+    { href: '/categories', title: 'categories' },
+    { href: '/politics', title: 'politics' },
+    { href: '/business', title: 'business' },
+    { href: '/health', title: 'health' },
+    { href: '/design', title: 'design' },
+    { href: '/sport', title: 'sport' },
+    { href: '/contact', title: 'contact' },
 ];
 
 function Header() {
     return (
-        <header className="sticky top-0 z-50 flex items-center justify-between w-screen py-4 flex-col-1 h-22">
-            <div>
-                <Link href="/" aria-label="Devmite.com">
-                    <div className="relative flex items-center justify-between cursor-pointer ">
-                        <div className="absolute mb-8 ">
+        <div className="container flex justify-between mx-auto lg:flex-col">
+            <header className="flex flex-col lg:flex-row lg:items-center gap-5 py-[30px]">
+                {/* left */}
+                <div className="flex-1">
+                    {/* logo */}
+                    <Link href="/" aria-label="Devmite.com">
+                        <div className="flex flex-col items-start cursor-pointer">
                             <Logo />
-                        </div>
-                        <div className="mb-4">
-                            {typeof headerDetails.logoName === 'string' ? (
-                                <div className="h-6 mt-8 ml-6 text-2xl font-semibold text-gray-900 dark:text-gray-200 sm:block">
-                                    {headerDetails.logoName}
-                                </div>
-                            ) : (
-                                headerDetails.logoName
-                            )}
-                        </div>
-                    </div>
-                </Link>
-            </div>
 
-            <div className="pt-1 pl-16 ml-16">
+                            <div className="text-2xl font-semibold text-gray-900 dark:text-gray-200 hover:text-[#649130] duration-200">
+                                {headerDetails.logoName}
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+
+                {/* social-links */}
+                <div className="items-center hidden gap-8 lg:flex">
+                    <TiSocialFacebook className="scale-[1.11] cursor-pointer hover:opacity-60 transition-opacity duration-200" />
+                    <AiOutlineTwitter className="scale-[1.11] cursor-pointer hover:opacity-60 transition-opacity duration-200" />
+                    <IoLogoInstagram className="scale-[1.11] cursor-pointer hover:opacity-60 transition-opacity duration-200" />
+                </div>
+
+                {/* search bar */}
                 <SearchBar />
-            </div>
+            </header>
 
-            <div className="flex items-center text-base leading-5 ">
-                <div className="hidden mr-6 space-x-8 sm:block ">
-                    {headerNavLinks.map((link) => (
-                        <Link key={link.title} href={link.href}>
-                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a
-                                href="#"
-                                className="p-1 font-medium text-gray-900 sm:p-4 dark:text-gray-300"
-                            >
-                                {link.title}
-                            </a>
-                        </Link>
-                    ))}
-                </div>
+            <MobileNav />
 
-                <div className="">
-                    <UserLogin />
-                </div>
-                <div className="mr-4">
-                    <ThemeSwitch />
-                </div>
-                <MobileNav />
-            </div>
-        </header>
+            {/* menu/tab */}
+            <nav className="sticky top-0 hidden lg:flex gap-10 py-2 text-[.85rem]">
+                {headerNavLinks.map((link) => (
+                    <Link key={link.title} href={link.href}>
+                        <span className="uppercase cursor-pointer">{link.title}</span>
+                    </Link>
+                ))}
+            </nav>
+        </div>
     );
 }
 

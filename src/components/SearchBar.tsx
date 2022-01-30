@@ -1,71 +1,31 @@
-// import Link from "next/link";
-import { SearchCircleIcon } from '@heroicons/react/outline';
-import { useState } from 'react';
-
-const headerNavLinks = [
-    { href: '/blog', title: 'Search' },
-    { href: '/tags', title: 'Tags' },
-    { href: '/projects', title: 'Projects' },
-    { href: '/about', title: 'About' },
-];
+import { FormEvent, useState } from 'react';
+import { ImSearch } from 'react-icons/im';
 
 const SearchBox = () => {
-    const [searchShow, setSearcShow] = useState(false);
+    const [text, setText] = useState('');
 
-    const onToggleSearchInput = () => {
-        setSearcShow((status) => {
-            if (status) {
-                document.body.style.overflow = 'auto';
-            } else {
-                // Prevent scrolling
-                document.body.style.overflow = 'hidden';
-            }
-            return !status;
-        });
+    const handleSearch = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log(text);
     };
 
     return (
-        <div className="">
+        <form className="flex items-center gap-[10px] h-[50px]" onSubmit={handleSearch}>
+            <input
+                type="text"
+                placeholder="Search..."
+                className="border-b border-[#ccc] h-full px-5 text-[#495057] rounded-[30px] outline-none placeholder-[#495057]"
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+            />
+
             <button
-                type="button"
-                className="w-8 h-8 ml-1 mr-4 rounded"
-                aria-label="Toggle Menu"
-                onClick={onToggleSearchInput}
+                type="submit"
+                className="h-full rounded-[30px] px-5 hover:bg-[#8bc34a] bg-black text-white duration-200"
             >
-                <div className="">
-                    {searchShow ? (
-                        <SearchCircleIcon className="h-6.5 text-gray-900 dark:text-gray-100" />
-                    ) : (
-                        <SearchCircleIcon className="h-6.5 text-gray-900 dark:text-gray-100" />
-                    )}
-                </div>
+                <ImSearch />
             </button>
-            <div
-                // className={`fixed w-full h-0 top-12 right-6 bg-gray-200 dark:bg-gray-800 opacity-60 z-20 transform ease-in-out duration-300 ${
-                //   searchShow ? "-translate-x-0" : "-translate-x-full"
-                // }`}
-                className={`absolute w-full h-0 top-12 right-0 bg-gray-100 dark:bg-gray-800 opacity-95 z-10 transform ease-in-out duration-300 ${
-                    searchShow ? 'translate-x-0' : '-translate-x-full'
-                }`}
-                // className={`fixed w-full h-0 top-12 right-0 bg-gray-200 dark:bg-gray-800 opacity-60 z-20 transform ease-in-out duration-300 ${
-                //   searchShow ? "-translate-y-36" : "-translate-y-full"
-                // }`}
-            >
-                <button
-                    type="button"
-                    aria-label="toggle modal"
-                    className="fixed w-full h-full cursor-auto focus:outline-none"
-                    onClick={onToggleSearchInput}
-                />
-                <searchbox className="fixed h-full mt-8">
-                    <input
-                        type="text"
-                        className="block w-screen py-1.5 pl-4 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 ring-opacity-90 bg-gray-700 dark:bg-gray-100 text-gray-100 dark:text-gray-900 aa-input"
-                        placeholder="Search Devmite"
-                    />
-                </searchbox>
-            </div>
-        </div>
+        </form>
     );
 };
 
