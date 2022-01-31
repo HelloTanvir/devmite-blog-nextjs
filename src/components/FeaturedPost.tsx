@@ -35,10 +35,15 @@ const FeaturedPost = ({
         <div className="flex-1 p-[50px] flex flex-col bg-[#f8f9fa] gap-2">
             {/* caption */}
             <span className="uppercase text-[0.9rem] tracking-wider text-gray-500">{caption}</span>
+
             {/* title */}
-            <h2 className="text-[26px] font-medium leading-8">{title}</h2>
+            <Link href={`/posts/${title}`}>
+                <h2 className="text-[26px] font-medium leading-8 cursor-pointer">{title}</h2>
+            </Link>
+
             {/* text */}
             <p className="text-[0.9rem] text-gray-600 font-light mb-2">{text}</p>
+
             {/* meta data */}
             <div className="flex flex-col gap-2 text-[0.8rem] text-[#b4b4b4]">
                 <div>

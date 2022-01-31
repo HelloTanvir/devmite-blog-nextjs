@@ -32,9 +32,13 @@ const RegularPost = ({
         {/* content */}
         <div className="flex-[2] px-[20px] py-[10px] flex flex-col gap-2">
             {/* title */}
-            <h2 className="text-[14px] font-medium">{title}</h2>
+            <Link href={`/posts/${title}`}>
+                <h2 className="text-[14px] font-medium cursor-pointer">{title}</h2>
+            </Link>
+
             {/* text */}
             <p className="text-[0.85rem] text-gray-600 font-light mb-2">{text}</p>
+
             {/* meta data */}
             <div className="flex flex-col gap-2 text-[0.8rem] text-[#b4b4b4]">
                 <div>
