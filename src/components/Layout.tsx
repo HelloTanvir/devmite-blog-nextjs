@@ -6,7 +6,7 @@ function Layout({ children }) {
     return (
         <div className="flex flex-col justify-between h-screen">
             <Header />
-            <main className="mb-auto">{children}</main>
+            <main className="my-[100px]">{children}</main>
             <Footer />
         </div>
     );
