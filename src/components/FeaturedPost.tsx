@@ -45,7 +45,7 @@ const FeaturedPost = ({
             <p className="text-[0.9rem] text-gray-600 font-light mb-2">{text}</p>
 
             {/* meta data */}
-            <div className="flex flex-col gap-2 text-[0.8rem] text-[#b4b4b4]">
+            <div className="flex flex-col gap-[2px] text-[0.8rem] text-[#b4b4b4]">
                 <div>
                     {/* author name */}
                     <Link href={authorUrl}>
