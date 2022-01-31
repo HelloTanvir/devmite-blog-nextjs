@@ -55,7 +55,7 @@ function Header() {
             </div>
 
             {/* menu/tab large device */}
-            <div className="sticky top-0 hidden border-b shadow-sm lg:block">
+            <div className="sticky top-0 z-40 hidden bg-white border-b shadow-sm lg:block">
                 <nav className="flex container gap-10 py-4 text-[.85rem]">
                     {headerNavLinks.map((link) => (
                         <Link key={link.title} href={link.href}>
