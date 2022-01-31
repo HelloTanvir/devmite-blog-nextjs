@@ -10,7 +10,17 @@ export default function Home() {
                 <link rel="icon" href="/devicon.ico" />
             </Head>
 
-            <FeaturedPost />
+            <FeaturedPost
+                imgSrc="https://preview.colorlib.com/theme/meranda/images/xbig_img_1.jpg.pagespeed.ic.K2N7KNYATl.webp"
+                caption="editor's pick"
+                title="News Needs to Meet Its Audiences Where They Are"
+                text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate vero obcaecati natus adipisci necessitatibus eius, enim vel sit ad reiciendis. Enim praesentium magni delectus cum, tempore deserunt aliquid quaerat culpa nemo veritatis, iste adipisci excepturi consectetur doloribus aliquam accusantium beatae?"
+                author="Dave Rogas"
+                postCategory="Food"
+                date="31 January 2022"
+                authorUrl="#"
+                categoryUrl="#"
+            />
         </div>
     );
 }
