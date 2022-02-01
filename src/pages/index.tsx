@@ -1,11 +1,14 @@
 import Head from 'next/head';
 import { useState } from 'react';
+import EditorsPickedPosts from '../components/EditorsPickedPosts';
 import FeaturedPost from '../components/FeaturedPost';
 import Paginate from '../components/Paginate';
 import PostsContainer from '../components/PostsContainer';
 import RegularPost from '../components/RegularPost';
+import SidePosts from '../components/SidePosts';
 import Slider from '../components/Slider';
 import rPosts from '../data/regularPosts';
+import trendingPosts from '../data/trendingPosts';
 
 export default function Home() {
     const [regularPosts, setRegularPosts] = useState(rPosts);
@@ -19,6 +22,32 @@ export default function Home() {
 
             {/* featured posts slider */}
             <Slider />
+
+            {/* editor's pick and trending */}
+            <div className="container mt-[100px] gap-[30px] flex flex-col lg:flex-row">
+                {/* editor's pick */}
+                <EditorsPickedPosts />
+
+                {/* trending */}
+                <div className="flex-1">
+                    <SidePosts postCaption="trending" posts={trendingPosts} />
+                </div>
+            </div>
+
+            {/* new post */}
+            <div className="mt-[100px]">
+                <FeaturedPost
+                    imgSrc="https://preview.colorlib.com/theme/meranda/images/xbig_img_1.jpg.pagespeed.ic.K2N7KNYATl.webp"
+                    caption="editor's pick"
+                    title="News Needs to Meet Its Audiences Where They Are"
+                    text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate vero obcaecati natus adipisci necessitatibus eius, enim vel sit ad reiciendis. Enim praesentium magni delectus cum, tempore deserunt aliquid quaerat culpa nemo veritatis, iste adipisci excepturi consectetur doloribus aliquam accusantium beatae?"
+                    author="Dave Rogas"
+                    postCategory="Food"
+                    date="31 January 2022"
+                    authorUrl="#"
+                    categoryUrl="#"
+                />
+            </div>
 
             {/* posts container with pagination */}
             <Paginate
@@ -44,20 +73,6 @@ export default function Home() {
                     ))}
                 </PostsContainer>
             </Paginate>
-
-            <div className="mt-[100px]">
-                <FeaturedPost
-                    imgSrc="https://preview.colorlib.com/theme/meranda/images/xbig_img_1.jpg.pagespeed.ic.K2N7KNYATl.webp"
-                    caption="editor's pick"
-                    title="News Needs to Meet Its Audiences Where They Are"
-                    text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate vero obcaecati natus adipisci necessitatibus eius, enim vel sit ad reiciendis. Enim praesentium magni delectus cum, tempore deserunt aliquid quaerat culpa nemo veritatis, iste adipisci excepturi consectetur doloribus aliquam accusantium beatae?"
-                    author="Dave Rogas"
-                    postCategory="Food"
-                    date="31 January 2022"
-                    authorUrl="#"
-                    categoryUrl="#"
-                />
-            </div>
         </div>
     );
 }
