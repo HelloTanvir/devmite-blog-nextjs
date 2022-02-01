@@ -65,15 +65,15 @@ const Slider = () => {
                 />
             </div>
 
-            <div className="flex justify-center space-x-4">
+            <div className="flex justify-center gap-[2px]">
                 {items.map((e) => (
                     <CgBorderStyleSolid
                         key={e.id}
                         onClick={() => handleSlide(e.id)}
                         className={
                             activeSlide === e.id
-                                ? 'cursor-pointer duration-150 text-3xl text-[#8bc34a]'
-                                : 'cursor-pointer duration-150 text-3xl text-gray-500'
+                                ? 'cursor-pointer duration-150 text-3xl text-[#8bc34a] scale-y-150 scale-x-75'
+                                : 'cursor-pointer duration-150 text-3xl text-gray-500 scale-y-150 scale-x-75'
                         }
                     />
                 ))}
