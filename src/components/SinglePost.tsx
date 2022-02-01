@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import RelatedPost from './RelatedPost';
+import SidePosts from './SidePosts';
 
 interface Props {
     imgSrc: string;
@@ -86,7 +86,7 @@ const SinglePost = ({
         </div>
 
         {/* right side - related post */}
-        <RelatedPost relatedPosts={relatedPosts} />
+        <SidePosts postCaption="Related" posts={relatedPosts} />
     </div>
 );
 
