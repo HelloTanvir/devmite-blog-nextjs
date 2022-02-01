@@ -82,7 +82,7 @@ const SinglePost = ({
             </div>
 
             {/* comments */}
-            <div>comments section will be created soon</div>
+            {/* <div>comments section will be created soon</div> */}
         </div>
 
         {/* right side - related post */}
