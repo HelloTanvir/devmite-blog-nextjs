@@ -5,7 +5,7 @@ import React from 'react';
 interface Props {
     imgSrc: string;
     title: string;
-    text: string;
+    text?: string;
     author: string;
     postCategory: string;
     date: string;
@@ -37,7 +37,7 @@ const RegularPost = ({
             </Link>
 
             {/* text */}
-            <p className="text-[0.85rem] text-gray-600 font-light mb-2">{text}</p>
+            {text ? <p className="text-[0.85rem] text-gray-600 font-light mb-2">{text}</p> : null}
 
             {/* meta data */}
             <div className="flex flex-col gap-[2px] text-[0.8rem] text-[#b4b4b4]">
