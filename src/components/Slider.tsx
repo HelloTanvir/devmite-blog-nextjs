@@ -28,14 +28,14 @@ const Slider = () => {
     return (
         <div className="relative">
             <AiOutlineArrowLeft
-                className="absolute top-1/2 -translate-y-1/2 left-0 z-30 cursor-pointer bg-white text-4xl text-gray-600 p-2"
+                className="absolute top-1/2 hidden lg:block -translate-y-1/2 left-0 z-30 cursor-pointer bg-white text-4xl text-gray-600 p-2"
                 onClick={slideToPrevItem}
             />
 
             {carouselFragment}
 
             <AiOutlineArrowRight
-                className="absolute top-1/2 -translate-y-1/2 right-0 z-30 cursor-pointer bg-white text-4xl text-gray-600 p-2"
+                className="absolute top-1/2 hidden lg:block -translate-y-1/2 right-0 z-30 cursor-pointer bg-white text-4xl text-gray-600 p-2"
                 onClick={slideToNextItem}
             />
         </div>
