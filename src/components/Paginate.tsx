@@ -52,11 +52,6 @@ const Paginate: React.FC<Props> = ({
         setPageCount(Math.ceil(itemsLength / itemsPerPage));
     }, [itemOffset, itemsLength, setRegularPosts, itemsPerPage, allPosts]);
 
-    useEffect(() => {
-        const endOffset = itemOffset + itemsPerPage;
-        console.log({ itemOffset, itemsLength, itemsPerPage, pageCount, endOffset });
-    }, [itemOffset, itemsLength, setRegularPosts, itemsPerPage, pageCount]);
-
     // Invoke when user click to request another page.
     const handlePageClick = (event: { selected: number }) => {
         const newOffset = (event.selected * itemsPerPage) % itemsLength;
