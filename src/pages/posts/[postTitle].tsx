@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
 import SinglePost from '../../components/SinglePost';
+import relatedPosts from '../../data/relatedPosts';
 
 const Post = () => {
     const router = useRouter();
@@ -17,41 +18,6 @@ const Post = () => {
         'Suscipit, officiis, vero! Perferendis accusamus quos voluptatum culpa, provident maiores! Illo itaque ullam fugit molestiae, eaque accusamus impedit autem numquam. Placeat molestias tempore eaque ipsam vel voluptatum velit enim quam iusto maxime delectus, sint sapiente ea, quo excepturi nisi! Quia.',
         'Dolores debitis excepturi maxime earum sapiente totam, quos dolore inventore tempore illum. Dolores explicabo sed amet aut atque, facere aliquid repudiandae quod possimus quo hic similique et voluptates fugit iure dolore quam ipsa numquam assumenda corporis? Dignissimos expedita fugit sapiente.',
         'Cupiditate ut, aspernatur labore obcaecati, eveniet aut velit nulla facere suscipit est recusandae vel error itaque earum doloremque hic necessitatibus dignissimos dolores libero laudantium ducimus! Rem dolorem ratione officia et, fugit non, fuga suscipit eos veritatis enim perspiciatis, magni sit!',
-    ];
-
-    const relatedPosts = [
-        {
-            title: 'News Needs to Meet Its Audiences Where They Are',
-            author: 'Dave Rogers',
-            postCategory: 'News',
-            date: '31 January 2022',
-            authorUrl: '#',
-            categoryUrl: '#',
-        },
-        {
-            title: 'News Needs to Meet Its Audiences Where They Are',
-            author: 'Dave Rogers',
-            postCategory: 'News',
-            date: '31 January 2022',
-            authorUrl: '#',
-            categoryUrl: '#',
-        },
-        {
-            title: 'News Needs to Meet Its Audiences Where They Are',
-            author: 'Dave Rogers',
-            postCategory: 'News',
-            date: '31 January 2022',
-            authorUrl: '#',
-            categoryUrl: '#',
-        },
-        {
-            title: 'News Needs to Meet Its Audiences Where They Are',
-            author: 'Dave Rogers',
-            postCategory: 'News',
-            date: '31 January 2022',
-            authorUrl: '#',
-            categoryUrl: '#',
-        },
     ];
 
     return (
