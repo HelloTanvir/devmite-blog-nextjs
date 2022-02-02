@@ -49,7 +49,9 @@ const NavMobile = ({ headerNavLinks }: Props) => {
 
             {/* backdrop */}
             <div
-                className="lg:hidden absolute h-screen left-0 right-[300px] bg-transparent cursor-default"
+                className={`lg:hidden ${
+                    open ? '' : 'hidden'
+                } fixed top-0 z-50 h-screen left-0 right-[300px] bg-transparent cursor-default`}
                 onClick={() => setOpen(false)}
                 role="button"
                 tabIndex={0}
