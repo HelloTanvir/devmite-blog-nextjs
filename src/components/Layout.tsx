@@ -4,7 +4,7 @@ import Header from './Header';
 
 function Layout({ children }) {
     return (
-        <div className="flex flex-col justify-between h-screen">
+        <div className="flex flex-col fixed overflow-y-auto inset-0">
             <Header />
             <main className="my-[100px]">{children}</main>
             <Footer />
