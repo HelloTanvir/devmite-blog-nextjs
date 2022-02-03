@@ -42,7 +42,7 @@ const Slider = () => {
     };
 
     return (
-        <div className="flex flex-col gap-[100px]">
+        <div className="flex flex-col gap-9 md:gap-[100px]">
             <div className="relative">
                 <AiOutlineArrowLeft
                     className="absolute left-0 z-30 hidden p-2 text-4xl text-gray-600 -translate-y-1/2 bg-white cursor-pointer top-1/2 lg:block"
@@ -65,6 +65,7 @@ const Slider = () => {
                 />
             </div>
 
+            {/* pagination section */}
             <div className="flex justify-center gap-[2px]">
                 {items.map((e) => (
                     <CgBorderStyleSolid
