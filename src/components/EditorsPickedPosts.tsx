@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import editorsPickedPosts from '../data/editorsPickedPosts';
+import PostMetaData from './PostMetaData';
 import RegularPost from './RegularPost';
 
 const EditorsPickedPosts = () => (
@@ -36,24 +37,13 @@ const EditorsPickedPosts = () => (
                 </p>
 
                 {/* meta data */}
-                <div className="flex flex-col gap-[2px] text-[0.8rem] text-[#b4b4b4]">
-                    <div>
-                        {/* author name */}
-                        <Link href={editorsPickedPosts[0].authorUrl}>
-                            <span className="text-black cursor-pointer">
-                                {editorsPickedPosts[0].author}
-                            </span>
-                        </Link>
-                        {' in '}
-                        {/* post category */}
-                        <Link href={editorsPickedPosts[0].categoryUrl}>
-                            <span className="text-black cursor-pointer">
-                                {editorsPickedPosts[0].postCategory}
-                            </span>
-                        </Link>
-                    </div>
-                    <span>{editorsPickedPosts[0].date}</span>
-                </div>
+                <PostMetaData
+                    author={editorsPickedPosts[0].author}
+                    postCategory={editorsPickedPosts[0].postCategory}
+                    date={editorsPickedPosts[0].date}
+                    authorUrl={editorsPickedPosts[0].authorUrl}
+                    categoryUrl={editorsPickedPosts[0].categoryUrl}
+                />
             </div>
 
             {/* editor's picked more posts */}

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import PostMetaData from './PostMetaData';
 
 interface Props {
     imgSrc: string;
@@ -45,20 +46,13 @@ const FeaturedPost = ({
             <p className="text-[0.9rem] text-gray-600 font-light mb-2">{text}</p>
 
             {/* meta data */}
-            <div className="flex flex-col gap-[2px] text-[0.8rem] text-[#b4b4b4]">
-                <div>
-                    {/* author name */}
-                    <Link href={authorUrl}>
-                        <span className="text-black cursor-pointer">{author}</span>
-                    </Link>
-                    {' in '}
-                    {/* post category */}
-                    <Link href={categoryUrl}>
-                        <span className="text-black cursor-pointer">{postCategory}</span>
-                    </Link>
-                </div>
-                <span>{date}</span>
-            </div>
+            <PostMetaData
+                author={author}
+                postCategory={postCategory}
+                date={date}
+                authorUrl={authorUrl}
+                categoryUrl={categoryUrl}
+            />
         </div>
     </div>
 );
