@@ -47,11 +47,14 @@ function Header() {
                         <IoLogoInstagram className="scale-[1.11] cursor-pointer hover:opacity-60 transition-opacity duration-200" />
                     </div>
 
-                    {/* search bar */}
-                    <SearchBar />
+                    {/* ulits wrapper */}
+                    <div className="flex items-center">
+                        {/* search bar */}
+                        <SearchBar />
 
-                    {/* theme switch */}
-                    <ThemeSwitch />
+                        {/* theme switch */}
+                        <ThemeSwitch />
+                    </div>
                 </header>
 
                 {/* menu/tab small device */}
