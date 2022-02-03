@@ -42,12 +42,14 @@ const PostMetaData = ({
             <div>
                 {/* author name */}
                 <Link href={authorUrl}>
-                    <span className="text-black cursor-pointer">{author}</span>
+                    <span className="text-black dark:text-[#3649b4] cursor-pointer">{author}</span>
                 </Link>
                 {' in '}
                 {/* post category */}
                 <Link href={categoryUrl}>
-                    <span className="text-black cursor-pointer">{postCategory}</span>
+                    <span className="text-black dark:text-[#3649b4] cursor-pointer">
+                        {postCategory}
+                    </span>
                 </Link>
             </div>
 

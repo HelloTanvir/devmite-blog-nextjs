@@ -38,7 +38,11 @@ const RegularPost = ({
             </Link>
 
             {/* text */}
-            {text ? <p className="text-[0.85rem] text-gray-600 font-light mb-2">{text}</p> : null}
+            {text ? (
+                <p className="text-[0.85rem] text-gray-600 dark:text-gray-400 font-light mb-2">
+                    {text}
+                </p>
+            ) : null}
 
             {/* meta data */}
             <PostMetaData

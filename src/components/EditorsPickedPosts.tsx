@@ -32,7 +32,7 @@ const EditorsPickedPosts = () => (
                 </Link>
 
                 {/* text */}
-                <p className="text-[0.9rem] text-gray-600 font-light">
+                <p className="text-[0.9rem] text-gray-600 dark:text-gray-400 font-light">
                     {editorsPickedPosts[0].text}
                 </p>
 

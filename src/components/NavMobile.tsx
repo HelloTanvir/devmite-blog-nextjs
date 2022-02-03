@@ -24,7 +24,7 @@ const NavMobile = ({ headerNavLinks }: Props) => {
             </button>
 
             <div
-                className={`flex flex-col gap-2 bg-white lg:hidden w-[300px] fixed right-0 top-0 bottom-0 z-50 shadow-2xl ${
+                className={`flex flex-col gap-2 bg-white dark:bg-[#1c1b22] lg:hidden w-[300px] fixed right-0 top-0 bottom-0 z-50 shadow-2xl ${
                     open ? 'translate-x-0' : 'translate-x-[350px]'
                 } duration-200 py-9`}
             >

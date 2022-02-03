@@ -45,7 +45,7 @@ const Slider = () => {
         <div className="flex flex-col gap-9 md:gap-[100px]">
             <div className="relative">
                 <AiOutlineArrowLeft
-                    className="absolute left-0 z-30 hidden p-2 text-4xl text-gray-600 -translate-y-1/2 bg-white cursor-pointer top-1/2 lg:block"
+                    className="absolute left-0 z-30 hidden p-2 text-4xl text-gray-600 -translate-y-1/2 bg-white dark:bg-[#121212] cursor-pointer top-1/2 lg:block"
                     onClick={() => {
                         slideToPrevItem();
                         const { id } = getCurrentActiveItem();
@@ -56,7 +56,7 @@ const Slider = () => {
                 {carouselFragment}
 
                 <AiOutlineArrowRight
-                    className="absolute right-0 z-30 hidden p-2 text-4xl text-gray-600 -translate-y-1/2 bg-white cursor-pointer top-1/2 lg:block"
+                    className="absolute right-0 z-30 hidden p-2 text-4xl text-gray-600 -translate-y-1/2 bg-white dark:bg-[#121212] cursor-pointer top-1/2 lg:block"
                     onClick={() => {
                         slideToNextItem();
                         const { id } = getCurrentActiveItem();

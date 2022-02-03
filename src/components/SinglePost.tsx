@@ -57,8 +57,11 @@ const SinglePost = ({
             {/* post content */}
             <div className="flex flex-col gap-4">
                 {texts.map((text, index) => (
-                    // eslint-disable-next-line react/no-array-index-key
-                    <p key={index} className="text-[0.85rem] text-gray-600 font-light">
+                    <p
+                        // eslint-disable-next-line react/no-array-index-key
+                        key={index}
+                        className="text-[0.85rem] dark:text-gray-400 text-gray-600 font-light"
+                    >
                         {text}
                     </p>
                 ))}

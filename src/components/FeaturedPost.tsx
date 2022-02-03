@@ -33,7 +33,7 @@ const FeaturedPost = ({
         </div>
 
         {/* content */}
-        <div className="flex-1 p-[50px] flex flex-col bg-[#f8f9fa] gap-2">
+        <div className="flex-1 p-[50px] flex flex-col bg-[#f8f9fa] dark:bg-[#141414] gap-2">
             {/* caption */}
             <span className="uppercase text-[0.9rem] tracking-wider text-gray-500">{caption}</span>
 
@@ -43,7 +43,7 @@ const FeaturedPost = ({
             </Link>
 
             {/* text */}
-            <p className="text-[0.9rem] text-gray-600 font-light mb-2">{text}</p>
+            <p className="text-[0.9rem] text-gray-600 dark:text-gray-400 font-light mb-2">{text}</p>
 
             {/* meta data */}
             <PostMetaData

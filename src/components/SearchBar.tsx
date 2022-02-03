@@ -14,14 +14,14 @@ const SearchBox = () => {
             <input
                 type="text"
                 placeholder="Search..."
-                className="border-b border-[#ccc] h-full px-5 text-[#495057] rounded-[30px] outline-none placeholder-[#495057]"
+                className="border-b border-[#ccc] dark:border-[#696464] h-full px-5 text-[#495057] rounded-[30px] outline-none placeholder-[#495057] dark:text-white dark:bg-[#1c1b22] dark:placeholder-white"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
             />
 
             <button
                 type="submit"
-                className="h-full rounded-[30px] px-5 hover:bg-[#8bc34a] bg-black text-white duration-200"
+                className="h-full rounded-[30px] px-5 hover:bg-[#8bc34a] bg-black text-white duration-200 dark:bg-[#1c1b22] dark:hover:bg-[#8bc34a]"
             >
                 <ImSearch />
             </button>
