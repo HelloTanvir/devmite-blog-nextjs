@@ -6,6 +6,7 @@ import { TiSocialFacebook } from 'react-icons/ti';
 import Logo from './Logo';
 import NavMobile from './NavMobile';
 import SearchBar from './SearchBar';
+import ThemeSwitch from './ThemeSwitch';
 
 const headerDetails = { logoName: 'Devmite.com' };
 
@@ -46,8 +47,14 @@ function Header() {
                         <IoLogoInstagram className="scale-[1.11] cursor-pointer hover:opacity-60 transition-opacity duration-200" />
                     </div>
 
-                    {/* search bar */}
-                    <SearchBar />
+                    {/* ulits wrapper */}
+                    <div className="flex items-center">
+                        {/* search bar */}
+                        <SearchBar />
+
+                        {/* theme switch */}
+                        <ThemeSwitch />
+                    </div>
                 </header>
 
                 {/* menu/tab small device */}
@@ -55,7 +62,7 @@ function Header() {
             </div>
 
             {/* menu/tab large device */}
-            <div className="sticky top-0 z-40 hidden bg-white border-b shadow-sm lg:block">
+            <div className="sticky top-0 z-40 hidden dark:bg-[#121212] bg-white dark:border-[#42404d] border-b shadow-sm lg:block">
                 <nav className="flex container gap-10 py-4 text-[.85rem]">
                     {headerNavLinks.map((link) => (
                         <Link key={link.title} href={link.href}>

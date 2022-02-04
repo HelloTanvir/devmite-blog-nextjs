@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import PostMetaData from './PostMetaData';
 
 interface Props {
     posts: {
@@ -38,22 +39,13 @@ const SidePosts = ({ posts, postCaption }: Props) => (
                     </Link>
 
                     {/* meta data */}
-                    <div className="flex flex-col gap-[2px] text-[0.8rem] text-[#b4b4b4]">
-                        <div>
-                            {/* author name */}
-                            <Link href={post.authorUrl}>
-                                <span className="text-black cursor-pointer">{post.author}</span>
-                            </Link>
-                            {' in '}
-                            {/* post category */}
-                            <Link href={post.categoryUrl}>
-                                <span className="text-black cursor-pointer">
-                                    {post.postCategory}
-                                </span>
-                            </Link>
-                        </div>
-                        <span>{post.date}</span>
-                    </div>
+                    <PostMetaData
+                        author={post.author}
+                        postCategory={post.postCategory}
+                        date={post.date}
+                        authorUrl={post.authorUrl}
+                        categoryUrl={post.categoryUrl}
+                    />
                 </div>
             </div>
         ))}

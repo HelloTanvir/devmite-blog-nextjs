@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import PostMetaData from './PostMetaData';
 
 interface Props {
     imgSrc: string;
@@ -37,23 +38,20 @@ const RegularPost = ({
             </Link>
 
             {/* text */}
-            {text ? <p className="text-[0.85rem] text-gray-600 font-light mb-2">{text}</p> : null}
+            {text ? (
+                <p className="text-[0.85rem] text-gray-600 dark:text-gray-400 font-light mb-2">
+                    {text}
+                </p>
+            ) : null}
 
             {/* meta data */}
-            <div className="flex flex-col gap-[2px] text-[0.8rem] text-[#b4b4b4]">
-                <div>
-                    {/* author name */}
-                    <Link href={authorUrl}>
-                        <span className="text-black cursor-pointer">{author}</span>
-                    </Link>
-                    {' in '}
-                    {/* post category */}
-                    <Link href={categoryUrl}>
-                        <span className="text-black cursor-pointer">{postCategory}</span>
-                    </Link>
-                </div>
-                <span>{date}</span>
-            </div>
+            <PostMetaData
+                author={author}
+                postCategory={postCategory}
+                date={date}
+                authorUrl={authorUrl}
+                categoryUrl={categoryUrl}
+            />
         </div>
     </div>
 );

@@ -24,7 +24,7 @@ const NavMobile = ({ headerNavLinks }: Props) => {
             </button>
 
             <div
-                className={`flex flex-col gap-2 bg-white lg:hidden w-[300px] fixed right-0 top-0 bottom-0 z-50 shadow-2xl ${
+                className={`flex flex-col gap-2 bg-white dark:bg-[#1c1b22] lg:hidden w-[300px] fixed right-0 top-0 bottom-0 z-50 shadow-2xl ${
                     open ? 'translate-x-0' : 'translate-x-[350px]'
                 } duration-200 py-9`}
             >
@@ -49,7 +49,9 @@ const NavMobile = ({ headerNavLinks }: Props) => {
 
             {/* backdrop */}
             <div
-                className="lg:hidden absolute h-screen left-0 right-[300px] bg-transparent cursor-default"
+                className={`lg:hidden ${
+                    open ? '' : 'hidden'
+                } fixed top-0 z-50 h-screen left-0 right-[300px] bg-transparent cursor-default`}
                 onClick={() => setOpen(false)}
                 role="button"
                 tabIndex={0}
