@@ -4,9 +4,8 @@ import React from 'react';
 
 interface Props {
     imgSrc: string;
-    caption: string;
     title: string;
-    text: string;
+    text?: string;
     author: string;
     postCategory: string;
     date: string;
@@ -14,9 +13,8 @@ interface Props {
     categoryUrl: string;
 }
 
-const FeaturedPost = ({
+const RegularPost = ({
     imgSrc,
-    caption,
     title,
     text,
     author,
@@ -25,24 +23,21 @@ const FeaturedPost = ({
     authorUrl,
     categoryUrl,
 }: Props) => (
-    <div className="container flex flex-col lg:flex-row">
+    <div className="flex">
         {/* image container */}
-        <div className="relative flex-1 min-h-[300px]">
+        <div className="relative flex-1">
             <Image src={imgSrc} layout="fill" objectFit="cover" />
         </div>
 
         {/* content */}
-        <div className="flex-1 p-[50px] flex flex-col bg-[#f8f9fa] gap-2">
-            {/* caption */}
-            <span className="uppercase text-[0.9rem] tracking-wider text-gray-500">{caption}</span>
-
+        <div className="flex-[2] px-[20px] py-[10px] flex flex-col gap-2">
             {/* title */}
             <Link href={`/posts/${title}`}>
-                <h2 className="text-[26px] font-medium leading-8 cursor-pointer">{title}</h2>
+                <h2 className="text-[14px] font-medium cursor-pointer">{title}</h2>
             </Link>
 
             {/* text */}
-            <p className="text-[0.9rem] text-gray-600 font-light mb-2">{text}</p>
+            {text ? <p className="text-[0.85rem] text-gray-600 font-light mb-2">{text}</p> : null}
 
             {/* meta data */}
             <div className="flex flex-col gap-[2px] text-[0.8rem] text-[#b4b4b4]">
@@ -63,4 +58,4 @@ const FeaturedPost = ({
     </div>
 );
 
-export default FeaturedPost;
+export default RegularPost;
