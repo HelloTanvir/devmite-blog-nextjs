@@ -56,12 +56,12 @@ const TextField = ({ label, type, name, placeholder, error, className, register 
 
                             {passInpuType === 'password' ? (
                                 <FiEye
-                                    className="absolute transform -translate-y-1/2 cursor-pointer right-4 top-1/2"
+                                    className="absolute text-gray-700 transform -translate-y-1/2 cursor-pointer right-4 top-1/2"
                                     onClick={togglePassInputType}
                                 />
                             ) : (
                                 <FiEyeOff
-                                    className="absolute transform -translate-y-1/2 cursor-pointer right-4 top-1/2"
+                                    className="absolute text-gray-700 transform -translate-y-1/2 cursor-pointer right-4 top-1/2"
                                     onClick={togglePassInputType}
                                 />
                             )}
