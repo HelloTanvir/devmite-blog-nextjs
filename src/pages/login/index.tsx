@@ -46,7 +46,7 @@ const Login: NextPage = () => {
                         <p className="text-sm font-medium text-gray-500">
                             Don&#39;t have a profile yet?{' '}
                             <span className="text-blue-600 transition-colors hover:text-blue-500">
-                                <Link href="/register/organization-info">Register</Link>
+                                <Link href="/register">Register</Link>
                             </span>
                         </p>
                     </div>
