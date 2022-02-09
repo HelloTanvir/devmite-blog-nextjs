@@ -40,7 +40,9 @@ const Registration: NextPage = () => {
                 <div className="flex flex-col items-center px-8 pt-6 pb-8 mb-4 bg-white rounded-lg shadow-md">
                     {/* form header */}
                     <div className="flex flex-col items-center gap-4 mb-6">
-                        <h1 className="text-2xl font-medium tracking-wide">Register an account</h1>
+                        <h1 className="text-2xl font-medium tracking-wide text-gray-800">
+                            Register an account
+                        </h1>
                         <p className="text-sm font-medium text-gray-500">
                             Already registered?{' '}
                             <span className="text-blue-600 transition-colors hover:text-blue-500">
