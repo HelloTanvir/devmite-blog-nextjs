@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import comments from '../data/comments';
 import Comment from './Comment';
+import PostComment from './PostComment';
 import PostMetaData from './PostMetaData';
 import SidePosts from './SidePosts';
 
@@ -82,6 +83,9 @@ const SinglePost = ({
                         <Comment key={comment.time} comment={comment} />
                     ))}
                 </div>
+
+                {/* post new comment */}
+                <PostComment />
             </div>
         </div>
 
