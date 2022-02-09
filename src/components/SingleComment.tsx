@@ -31,7 +31,7 @@ const SingleComment = ({ comment, isReplying, setIsReplying, handleComment }: Pr
                 // text field
                 <form onSubmit={handleComment} className="mt-[14px] flex flex-col gap-2 items-end">
                     <textarea
-                        rows="3"
+                        rows={3}
                         className="w-full px-3 py-3 bg-gray-100 rounded-lg outline-none resize-none dark:bg-gray-700"
                     />
 

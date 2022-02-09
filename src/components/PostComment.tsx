@@ -18,7 +18,7 @@ const PostComment = () => {
 
             <form onSubmit={handleComment} className="mt-[14px] flex flex-col gap-2 items-end">
                 <textarea
-                    rows="4"
+                    rows={4}
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     className="w-full px-3 py-3 bg-gray-100 rounded-lg outline-none resize-none dark:bg-gray-700"

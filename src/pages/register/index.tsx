@@ -8,11 +8,6 @@ import TextField from '../../components/TextField';
 import RegistrationFields from '../../utils/RegistrationFields';
 import RegistrationSchema from '../../utils/RegistrationSchema';
 
-export interface RegistrationData {
-    email: string;
-    password: string;
-}
-
 const Registration: NextPage = () => {
     const {
         register,
@@ -22,7 +17,7 @@ const Registration: NextPage = () => {
         resolver: yupResolver(RegistrationSchema),
     });
 
-    const submitForm = async (data: RegistrationData) => {
+    const submitForm = async (data: { [key: string]: any }) => {
         console.log({ registrationData: data });
     };
 

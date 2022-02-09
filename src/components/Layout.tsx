@@ -1,9 +1,13 @@
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Footer from './Footer';
 import Header from './Header';
 
-function Layout({ children }) {
+interface Props {
+    children?: ReactNode;
+}
+
+function Layout({ children }: Props) {
     const router = useRouter();
 
     const isAuthPage = router.pathname.match(/(\/login|\/register)/g);

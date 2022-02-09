@@ -8,11 +8,6 @@ import TextField from '../../components/TextField';
 import LoginFields from '../../utils/LoginFields';
 import LoginSchema from '../../utils/LoginSchema';
 
-export interface LoginData {
-    email: string;
-    password: string;
-}
-
 const Login: NextPage = () => {
     const {
         register,
@@ -22,7 +17,7 @@ const Login: NextPage = () => {
         resolver: yupResolver(LoginSchema),
     });
 
-    const submitForm = async (data: LoginData) => {
+    const submitForm = async (data: { [key: string]: any }) => {
         console.log({ loginData: data });
     };
 
