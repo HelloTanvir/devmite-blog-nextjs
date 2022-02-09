@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { AiOutlineTwitter } from 'react-icons/ai';
+import { BiUserCircle } from 'react-icons/bi';
 import { IoLogoInstagram } from 'react-icons/io';
 import { TiSocialFacebook } from 'react-icons/ti';
 import Logo from './Logo';
@@ -74,7 +75,7 @@ function Header() {
                     </div>
 
                     {/* auth buttons */}
-                    <div className="flex gap-4">
+                    <div className="flex items-center gap-4">
                         <Link href="/login">
                             <span className="px-3 py-1 text-sm tracking-wide duration-200 border border-[#8bc34a] rounded-lg cursor-pointer hover:border-gray-700 hover:text-gray-700 dark:hover:text-gray-300 dark:hover:border-gray-500">
                                 login
@@ -84,6 +85,14 @@ function Header() {
                         <Link href="/register">
                             <span className="px-3 py-1 text-sm tracking-wide duration-200 border border-[#8bc34a] rounded-lg cursor-pointer hover:border-gray-700 hover:text-gray-700 dark:hover:text-gray-300 dark:hover:border-gray-500">
                                 register
+                            </span>
+                        </Link>
+
+                        {/* profile button will be visible if user is logged in */}
+                        <Link href="/profile">
+                            <span className="flex items-center gap-1 text-sm cursor-pointer hover:text-[#8bc34a] duration-200">
+                                profile
+                                <BiUserCircle className="text-base" />
                             </span>
                         </Link>
                     </div>
