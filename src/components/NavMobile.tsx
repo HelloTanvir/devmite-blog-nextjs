@@ -44,6 +44,21 @@ const NavMobile = ({ headerNavLinks }: Props) => {
                             </span>
                         </Link>
                     ))}
+
+                    {/* auth buttons */}
+                    <div className="flex gap-4">
+                        <Link href="/login">
+                            <span className="px-4 py-[6px] text-sm tracking-wide duration-200 border border-[#8bc34a] rounded-lg cursor-pointer hover:border-gray-700 hover:text-gray-700 dark:hover:text-gray-300 dark:hover:border-gray-500">
+                                login
+                            </span>
+                        </Link>
+
+                        <Link href="/register">
+                            <span className="px-4 py-[6px] text-sm tracking-wide duration-200 border border-[#8bc34a] rounded-lg cursor-pointer hover:border-gray-700 hover:text-gray-700 dark:hover:text-gray-300 dark:hover:border-gray-500">
+                                register
+                            </span>
+                        </Link>
+                    </div>
                 </nav>
             </div>
 

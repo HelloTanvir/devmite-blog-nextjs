@@ -63,12 +63,30 @@ function Header() {
 
             {/* menu/tab large device */}
             <div className="sticky top-0 z-40 hidden dark:bg-[#121212] bg-white dark:border-[#42404d] border-b shadow-sm lg:block">
-                <nav className="flex container gap-10 py-4 text-[.85rem]">
-                    {headerNavLinks.map((link) => (
-                        <Link key={link.title} href={link.href}>
-                            <span className="uppercase cursor-pointer">{link.title}</span>
+                <nav className="container flex items-center justify-between">
+                    {/* tabs */}
+                    <div className="flex gap-10 text-[.85rem]  py-4">
+                        {headerNavLinks.map((link) => (
+                            <Link key={link.title} href={link.href}>
+                                <span className="uppercase cursor-pointer">{link.title}</span>
+                            </Link>
+                        ))}
+                    </div>
+
+                    {/* auth buttons */}
+                    <div className="flex gap-4">
+                        <Link href="/login">
+                            <span className="px-3 py-1 text-sm tracking-wide duration-200 border border-[#8bc34a] rounded-lg cursor-pointer hover:border-gray-700 hover:text-gray-700 dark:hover:text-gray-300 dark:hover:border-gray-500">
+                                login
+                            </span>
                         </Link>
-                    ))}
+
+                        <Link href="/register">
+                            <span className="px-3 py-1 text-sm tracking-wide duration-200 border border-[#8bc34a] rounded-lg cursor-pointer hover:border-gray-700 hover:text-gray-700 dark:hover:text-gray-300 dark:hover:border-gray-500">
+                                register
+                            </span>
+                        </Link>
+                    </div>
                 </nav>
             </div>
         </>
