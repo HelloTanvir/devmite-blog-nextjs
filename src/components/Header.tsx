@@ -14,11 +14,11 @@ const headerDetails = { logoName: 'Devmite.com' };
 const headerNavLinks = [
     { href: '/home', title: 'home' },
     { href: '/categories', title: 'categories' },
-    { href: '/politics', title: 'politics' },
     { href: '/business', title: 'business' },
     { href: '/health', title: 'health' },
     { href: '/design', title: 'design' },
     { href: '/sport', title: 'sport' },
+    { href: '/archive', title: 'archive' },
     { href: '/contact', title: 'contact' },
 ];
 
