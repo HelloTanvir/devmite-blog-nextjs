@@ -9,14 +9,14 @@ import ThemeSwitch from './ThemeSwitch';
 const headerDetails = { logoName: 'Devmite.com' };
 
 const headerNavLinks = [
-    { href: '/home', title: 'home' },
-    { href: '/categories', title: 'categories' },
-    { href: '/business', title: 'business' },
-    { href: '/health', title: 'health' },
-    { href: '/design', title: 'design' },
-    { href: '/sport', title: 'sport' },
-    { href: '/archive', title: 'archive' },
-    { href: '/contact', title: 'contact' },
+    { href: '/', title: 'home' },
+    { href: '/', title: 'categories' },
+    { href: '/', title: 'business' },
+    { href: '/', title: 'health' },
+    { href: '/', title: 'design' },
+    { href: '/', title: 'sport' },
+    { href: '/', title: 'politics' },
+    { href: '/', title: 'contact' },
 ];
 
 function Header() {
