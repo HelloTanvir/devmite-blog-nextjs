@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import comments from '../data/comments';
+import Archives from './Archives';
 import Comment from './Comment';
 import PostComment from './PostComment';
 import PostMetaData from './PostMetaData';
@@ -89,8 +90,11 @@ const SinglePost = ({
             </div>
         </div>
 
-        {/* right side - related post */}
-        <SidePosts postCaption="Related" posts={relatedPosts} />
+        {/* right side - related post and archives */}
+        <div className="flex flex-col gap-12">
+            <SidePosts postCaption="Related" posts={relatedPosts} />
+            <Archives />
+        </div>
     </div>
 );
 
