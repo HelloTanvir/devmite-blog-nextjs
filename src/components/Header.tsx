@@ -22,13 +22,13 @@ const headerNavLinks = [
 function Header() {
     return (
         <>
-            <div className="container flex justify-between lg:block">
+            <div className="container flex items-center justify-between lg:block">
                 <header className="flex flex-col gap-5 lg:flex-row lg:items-center py-[30px]">
                     {/* left */}
                     <div className="flex-1">
                         {/* logo */}
                         <Link href="/" aria-label="Devmite.com">
-                            <div className="flex  items-center cursor-pointer">
+                            <div className="flex items-center cursor-pointer max-w-max">
                                 <Logo />
 
                                 <div className="text-2xl font-semibold text-gray-900 dark:text-gray-200 hover:text-[#649130] duration-200">
@@ -38,10 +38,12 @@ function Header() {
                         </Link>
                     </div>
 
-                    {/* social-links */}
                     {/* search bar */}
-                    <SearchBar />
+                    <div className="hidden lg:block">
+                        <SearchBar />
+                    </div>
 
+                    {/* social-links */}
                     <div className="items-center hidden gap-8 lg:flex">
                         <RiFacebookFill className="scale-[1.11] cursor-pointer hover:opacity-60 transition-opacity duration-200" />
                         <RiTwitterFill className="scale-[1.11] cursor-pointer hover:opacity-60 transition-opacity duration-200" />
@@ -49,14 +51,17 @@ function Header() {
                     </div>
 
                     {/* ulits wrapper */}
-                    <div className="flex items-center">
+                    <div className="items-center hidden lg:flex">
                         {/* theme switch */}
                         <ThemeSwitch />
                     </div>
 
-                    <Link href="/profile">
-                        <RiUser6Fill className="scale-[1.11] cursor-pointer hover:opacity-60 transition-opacity duration-200" />
-                    </Link>
+                    {/* profile button */}
+                    <div className="hidden lg:block">
+                        <Link href="/profile">
+                            <RiUser6Fill className="scale-[1.11] cursor-pointer hover:opacity-60 transition-opacity duration-200" />
+                        </Link>
+                    </div>
                 </header>
 
                 {/* menu/tab small device */}
@@ -88,8 +93,6 @@ function Header() {
                                 register
                             </span>
                         </Link>
-
-                        {/* profile button will be visible if user is logged in */}
                     </div>
                 </nav>
             </div>

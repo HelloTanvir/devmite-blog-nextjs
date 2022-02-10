@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { BiUserCircle } from 'react-icons/bi';
 import { HiOutlineMenu } from 'react-icons/hi';
 import { MdOutlineClose } from 'react-icons/md';
+import { RiUser6Fill } from 'react-icons/ri';
+import SearchBar from './SearchBar';
+import ThemeSwitch from './ThemeSwitch';
 
 interface Props {
     headerNavLinks: {
@@ -18,7 +20,7 @@ const NavMobile = ({ headerNavLinks }: Props) => {
         <>
             <button
                 type="button"
-                className="cursor-pointer lg:hidden h-[30px] py-[30px]"
+                className="cursor-pointer lg:hidden h-[30px]"
                 onClick={() => setOpen(true)}
             >
                 <HiOutlineMenu className="text-3xl duration-150 hover:text-gray-600" />
@@ -46,6 +48,20 @@ const NavMobile = ({ headerNavLinks }: Props) => {
                         </Link>
                     ))}
 
+                    {/* utils */}
+                    <div className="flex items-center">
+                        {/* search field */}
+                        <SearchBar isMobile />
+
+                        {/* theme changer */}
+                        <ThemeSwitch />
+
+                        {/* profile button */}
+                        <Link href="/profile">
+                            <RiUser6Fill className="scale-[1.11] cursor-pointer hover:opacity-60 transition-opacity duration-200" />
+                        </Link>
+                    </div>
+
                     {/* auth buttons */}
                     <div className="flex gap-4">
                         <Link href="/login">
@@ -57,14 +73,6 @@ const NavMobile = ({ headerNavLinks }: Props) => {
                         <Link href="/register">
                             <span className="px-4 py-[6px] text-sm tracking-wide duration-200 border border-[#8bc34a] rounded-lg cursor-pointer hover:border-gray-700 hover:text-gray-700 dark:hover:text-gray-300 dark:hover:border-gray-500">
                                 register
-                            </span>
-                        </Link>
-
-                        {/* profile button will be visible if user is logged in */}
-                        <Link href="/profile">
-                            <span className="flex items-center gap-1 text-sm cursor-pointer hover:text-[#8bc34a] duration-200">
-                                profile
-                                <BiUserCircle className="text-base" />
                             </span>
                         </Link>
                     </div>
