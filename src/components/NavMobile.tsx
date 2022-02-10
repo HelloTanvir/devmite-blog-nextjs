@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { BiUserCircle } from 'react-icons/bi';
 import { HiOutlineMenu } from 'react-icons/hi';
 import { MdOutlineClose } from 'react-icons/md';
 
@@ -44,6 +45,29 @@ const NavMobile = ({ headerNavLinks }: Props) => {
                             </span>
                         </Link>
                     ))}
+
+                    {/* auth buttons */}
+                    <div className="flex gap-4">
+                        <Link href="/login">
+                            <span className="px-4 py-[6px] text-sm tracking-wide duration-200 border border-[#8bc34a] rounded-lg cursor-pointer hover:border-gray-700 hover:text-gray-700 dark:hover:text-gray-300 dark:hover:border-gray-500">
+                                login
+                            </span>
+                        </Link>
+
+                        <Link href="/register">
+                            <span className="px-4 py-[6px] text-sm tracking-wide duration-200 border border-[#8bc34a] rounded-lg cursor-pointer hover:border-gray-700 hover:text-gray-700 dark:hover:text-gray-300 dark:hover:border-gray-500">
+                                register
+                            </span>
+                        </Link>
+
+                        {/* profile button will be visible if user is logged in */}
+                        <Link href="/profile">
+                            <span className="flex items-center gap-1 text-sm cursor-pointer hover:text-[#8bc34a] duration-200">
+                                profile
+                                <BiUserCircle className="text-base" />
+                            </span>
+                        </Link>
+                    </div>
                 </nav>
             </div>
 

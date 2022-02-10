@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 import ReactPaginate from 'react-paginate';
@@ -38,15 +39,15 @@ const Paginate: React.FC<Props> = ({
     itemsPerPage,
     allPosts,
 }) => {
-    if (!itemsPerPage) {
-        // eslint-disable-next-line no-param-reassign
-        itemsPerPage = 10;
-    }
-
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
 
     useEffect(() => {
+        if (!itemsPerPage) {
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+            itemsPerPage = 10;
+        }
+
         const endOffset = itemOffset + itemsPerPage;
         setRegularPosts((prev) => (allPosts ? allPosts.slice(itemOffset, endOffset) : prev));
         setPageCount(Math.ceil(itemsLength / itemsPerPage));
@@ -54,6 +55,11 @@ const Paginate: React.FC<Props> = ({
 
     // Invoke when user click to request another page.
     const handlePageClick = (event: { selected: number }) => {
+        if (!itemsPerPage) {
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+            itemsPerPage = 10;
+        }
+
         const newOffset = (event.selected * itemsPerPage) % itemsLength;
         setItemOffset(newOffset);
     };
@@ -70,7 +76,7 @@ const Paginate: React.FC<Props> = ({
                     pageRangeDisplayed={5}
                     pageCount={pageCount}
                     previousLabel={<MdNavigateBefore className="scale-125" />}
-                    renderOnZeroPageCount={null}
+                    // renderOnZeroPageCount={null}
                     className="flex gap-5 items-center text-[#b3b3b3] text-[0.89rem] font-medium"
                     pageLinkClassName="hover:text-black duration-200"
                     activeLinkClassName="text-black"

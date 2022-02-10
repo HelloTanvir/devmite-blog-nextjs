@@ -1,10 +1,24 @@
-import React from 'react';
+import { useRouter } from 'next/router';
+import React, { ReactNode } from 'react';
 import Footer from './Footer';
 import Header from './Header';
 
-function Layout({ children }) {
+interface Props {
+    children?: ReactNode;
+}
+
+function Layout({ children }: Props) {
+    const router = useRouter();
+
+    const isAuthPage = router.pathname.match(/(\/login|\/register)/g);
+
+    // if the rendered page is login or register page, no need to render header here
+    if (isAuthPage) {
+        return <>{children}</>;
+    }
+
     return (
-        <div className="flex flex-col fixed overflow-y-auto inset-0">
+        <div className="fixed inset-0 flex flex-col overflow-y-auto">
             <Header />
             <main className="my-[100px]">{children}</main>
             <Footer />

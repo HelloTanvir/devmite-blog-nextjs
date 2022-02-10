@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
+import comments from '../data/comments';
+import Comment from './Comment';
+import PostComment from './PostComment';
 import PostMetaData from './PostMetaData';
 import SidePosts from './SidePosts';
 
@@ -68,7 +71,22 @@ const SinglePost = ({
             </div>
 
             {/* comments */}
-            {/* <div>comments section will be created soon</div> */}
+            <div className="flex flex-col gap-[70px]">
+                {/* section title */}
+                <h2 className="text-xl inline-flex max-w-max mb-5 border-b border-[#222] capitalize">
+                    7 comments
+                </h2>
+
+                {/* comments */}
+                <div className="flex flex-col gap-[60px]">
+                    {comments.map((comment) => (
+                        <Comment key={comment.time} comment={comment} />
+                    ))}
+                </div>
+
+                {/* post new comment */}
+                <PostComment />
+            </div>
         </div>
 
         {/* right side - related post */}
