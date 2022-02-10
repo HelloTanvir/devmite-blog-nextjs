@@ -4,13 +4,11 @@ const RegistrationSchema = yup.object().shape({
     name: yup
         .string()
         .min(3, 'Name should be at least 3 characters long')
-        .email()
         .required('Name is required'),
 
     address: yup
         .string()
         .min(3, 'Address should be at least 3 characters long')
-        .email()
         .required('Address is required'),
 
     email: yup.string().email().required('Email is required'),
