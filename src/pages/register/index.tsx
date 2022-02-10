@@ -30,7 +30,11 @@ const Registration: NextPage = () => {
 
             <main
                 className="flex items-center justify-center h-screen"
-                style={{ backgroundImage: 'url("/background.jpg")' }}
+                style={{
+                    backgroundImage: 'url("/background.jpg")',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                }}
             >
                 <div className="flex flex-col items-center px-8 pt-6 pb-8 mb-4 bg-white rounded-lg shadow-md">
                     {/* form header */}
