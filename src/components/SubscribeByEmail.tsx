@@ -11,7 +11,7 @@ const SubscribeByEmail = () => {
 
     return (
         <form
-            className="flex items-center w-full md:flex-1 gap-[10px] h-[50px]"
+            className="flex items-center w-full md:flex-1 gap-[10px] h-10"
             onSubmit={handleSubscribe}
         >
             <input
@@ -24,9 +24,9 @@ const SubscribeByEmail = () => {
 
             <button
                 type="submit"
-                className="h-full rounded-[30px] px-5 hover:bg-[#8bc34a] bg-black dark:bg-[#1c1b22] dark:hover:bg-[#8bc34a] text-white duration-200"
+                className="h-full rounded-full flex justify-center items-center w-10 hover:bg-[#8bc34a] bg-black dark:bg-[#1c1b22] dark:hover:bg-[#8bc34a] text-white duration-200"
             >
-                <FaPaperPlane />
+                <FaPaperPlane className="scale-90" />
             </button>
         </form>
     );
