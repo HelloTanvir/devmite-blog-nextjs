@@ -58,18 +58,36 @@ export default function Home() {
             >
                 <PostsContainer sectionTitle="Regular Posts">
                     {regularPosts.map((post, index) => (
-                        <RegularPost
-                            // eslint-disable-next-line react/no-array-index-key
-                            key={index}
-                            imgSrc={post.imgSrc}
-                            title={post.title}
-                            text={post.text}
-                            author={post.author}
-                            postCategory={post.postCategory}
-                            date={post.date}
-                            authorUrl={post.authorUrl}
-                            categoryUrl={post.categoryUrl}
-                        />
+                        // eslint-disable-next-line react/no-array-index-key
+                        <div key={index}>
+                            {/* large device */}
+                            <div className="hidden md:block">
+                                <RegularPost
+                                    imgSrc={post.imgSrc}
+                                    title={post.title}
+                                    text={post.text}
+                                    author={post.author}
+                                    postCategory={post.postCategory}
+                                    date={post.date}
+                                    authorUrl={post.authorUrl}
+                                    categoryUrl={post.categoryUrl}
+                                />
+                            </div>
+
+                            {/* small device */}
+                            <div className="block md:hidden">
+                                <RegularPost
+                                    imgSrc={post.imgSrc}
+                                    title={post.title}
+                                    // text={post.text}
+                                    author={post.author}
+                                    postCategory={post.postCategory}
+                                    date={post.date}
+                                    authorUrl={post.authorUrl}
+                                    categoryUrl={post.categoryUrl}
+                                />
+                            </div>
+                        </div>
                     ))}
                 </PostsContainer>
             </Paginate>
