@@ -42,7 +42,7 @@ const Slider = () => {
     };
 
     return (
-        <div className="flex flex-col gap-9 md:gap-[100px]">
+        <div className="flex flex-col gap-9 md:gap-[100px] lg:pointer-events-auto pointer-events-none">
             <div className="relative">
                 <AiOutlineArrowLeft
                     className="absolute left-0 z-30 hidden p-2 text-4xl text-gray-600 -translate-y-1/2 bg-white dark:bg-[#121212] cursor-pointer top-1/2 lg:block"
@@ -71,11 +71,9 @@ const Slider = () => {
                     <CgBorderStyleSolid
                         key={e.id}
                         onClick={() => handleSlide(e.id)}
-                        className={
-                            activeSlide === e.id
-                                ? 'cursor-pointer duration-150 text-3xl text-[#8bc34a] scale-y-150 scale-x-75'
-                                : 'cursor-pointer duration-150 text-3xl text-gray-500 scale-y-150 scale-x-75'
-                        }
+                        className={`cursor-pointer duration-150 text-3xl ${
+                            activeSlide === e.id ? 'text-[#8bc34a]' : 'text-gray-500'
+                        } scale-y-150 scale-x-75 pointer-events-auto`}
                     />
                 ))}
             </div>

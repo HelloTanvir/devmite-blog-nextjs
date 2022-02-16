@@ -39,7 +39,9 @@ const FeaturedPost = ({
 
             {/* title */}
             <Link href={`/posts/${title}`}>
-                <h2 className="text-[26px] font-medium leading-8 cursor-pointer">{title}</h2>
+                <h2 className="text-[26px] font-medium leading-8 cursor-pointer pointer-events-auto">
+                    {title}
+                </h2>
             </Link>
 
             {/* text */}
