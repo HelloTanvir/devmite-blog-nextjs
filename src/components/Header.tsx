@@ -25,7 +25,7 @@ function Header() {
                     {/* left */}
                     <div className="flex-1 flex flex-col gap-1">
                         {/* icons on mobile view */}
-                        <IconSet className="flex lg:hidden gap-4 items-center w-[245px] flex-wrap" />
+                        <IconSet className="flex lg:hidden gap-4 items-center w-[245px] md:w-max flex-wrap" />
 
                         {/* logo */}
                         <Link href="/" aria-label="Devmite.com">
