@@ -24,7 +24,7 @@ const RegularPost = ({
     authorUrl,
     categoryUrl,
 }: Props) => (
-    <div className="flex">
+    <div className="flex shadow-lg">
         {/* image container */}
         <div className="relative flex-1">
             <Image src={imgSrc} layout="fill" objectFit="cover" />
