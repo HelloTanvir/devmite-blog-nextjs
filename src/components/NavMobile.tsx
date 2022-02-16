@@ -2,9 +2,6 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { HiOutlineMenu } from 'react-icons/hi';
 import { MdOutlineClose } from 'react-icons/md';
-import { RiUser6Fill } from 'react-icons/ri';
-import SearchBar from './SearchBar';
-import ThemeSwitch from './ThemeSwitch';
 
 interface Props {
     headerNavLinks: {
@@ -47,20 +44,6 @@ const NavMobile = ({ headerNavLinks }: Props) => {
                             </span>
                         </Link>
                     ))}
-
-                    {/* utils */}
-                    <div className="flex items-center">
-                        {/* search field */}
-                        <SearchBar isMobile />
-
-                        {/* theme changer */}
-                        <ThemeSwitch />
-
-                        {/* profile button */}
-                        <Link href="/profile">
-                            <RiUser6Fill className="scale-[1.11] cursor-pointer hover:opacity-60 transition-opacity duration-200" />
-                        </Link>
-                    </div>
 
                     {/* auth buttons */}
                     <div className="flex gap-4">

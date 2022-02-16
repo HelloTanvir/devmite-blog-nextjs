@@ -1,10 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
-import { RiFacebookFill, RiInstagramFill, RiTwitterFill, RiUser6Fill } from 'react-icons/ri';
+import IconSet from './IconSet';
 import Logo from './Logo';
 import NavMobile from './NavMobile';
-import SearchBar from './SearchBar';
-import ThemeSwitch from './ThemeSwitch';
 
 const headerDetails = { logoName: 'Devmite.com' };
 
@@ -25,7 +23,10 @@ function Header() {
             <div className="container flex items-center justify-between lg:block">
                 <header className="flex flex-col gap-5 lg:flex-row lg:items-center py-[30px]">
                     {/* left */}
-                    <div className="flex-1">
+                    <div className="flex-1 flex flex-col gap-1">
+                        {/* icons on mobile view */}
+                        <IconSet className="flex lg:hidden gap-4 items-center w-[245px] flex-wrap" />
+
                         {/* logo */}
                         <Link href="/" aria-label="Devmite.com">
                             <div className="flex items-center cursor-pointer max-w-max">
@@ -38,30 +39,7 @@ function Header() {
                         </Link>
                     </div>
 
-                    {/* search bar */}
-                    <div className="hidden lg:block">
-                        <SearchBar />
-                    </div>
-
-                    {/* social-links */}
-                    <div className="items-center hidden gap-8 lg:flex">
-                        <RiFacebookFill className="scale-[1.11] cursor-pointer hover:opacity-60 transition-opacity duration-200" />
-                        <RiTwitterFill className="scale-[1.11] cursor-pointer hover:opacity-60 transition-opacity duration-200" />
-                        <RiInstagramFill className="scale-[1.11] cursor-pointer hover:opacity-60 transition-opacity duration-200" />
-                    </div>
-
-                    {/* ulits wrapper */}
-                    <div className="items-center hidden lg:flex">
-                        {/* theme switch */}
-                        <ThemeSwitch />
-                    </div>
-
-                    {/* profile button */}
-                    <div className="hidden lg:block">
-                        <Link href="/profile">
-                            <RiUser6Fill className="scale-[1.11] cursor-pointer hover:opacity-60 transition-opacity duration-200" />
-                        </Link>
-                    </div>
+                    <IconSet className="hidden lg:flex gap-8 items-center" />
                 </header>
 
                 {/* menu/tab small device */}
