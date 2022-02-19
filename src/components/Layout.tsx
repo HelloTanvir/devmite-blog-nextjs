@@ -20,7 +20,7 @@ function Layout({ children }: Props) {
     return (
         <div className="fixed inset-0 flex flex-col overflow-y-auto">
             <Header />
-            <main className="my-[100px]">{children}</main>
+            <main className="md:my-[100px] my-11">{children}</main>
             <Footer />
         </div>
     );
