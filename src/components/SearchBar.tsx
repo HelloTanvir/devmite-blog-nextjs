@@ -29,7 +29,7 @@ const SearchBar = ({ isMobile }: Props) => {
                     isMobile ? 'dark:bg-[#29282e]' : 'dark:bg-[#1c1b22]'
                 } bg-black ${open ? 'w-full pl-[15px] pr-10 opacity-100' : 'w-0 opacity-0'}`}
                 style={{
-                    transition: 'width 0.6s cubic-bezier(0,1.22,.66,1.39),border-radius 0.6s',
+                    transition: 'width 0.2s ease-out',
                 }}
             >
                 <input
