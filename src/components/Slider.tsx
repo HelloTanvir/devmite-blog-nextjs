@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import { CgBorderStyleSolid } from 'react-icons/cg';
 import { useSpringCarousel } from 'react-spring-carousel-js';
@@ -40,6 +40,16 @@ const Slider = () => {
         setActiveSlide(id);
         slideToItem(id);
     };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            slideToNextItem();
+            const { id } = getCurrentActiveItem();
+            setActiveSlide(id);
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [slideToNextItem, getCurrentActiveItem]);
 
     return (
         <div className="flex flex-col gap-9 md:gap-[100px] lg:pointer-events-auto pointer-events-none">
