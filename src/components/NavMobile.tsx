@@ -17,7 +17,7 @@ const NavMobile = ({ headerNavLinks }: Props) => {
         <>
             <button
                 type="button"
-                className="cursor-pointer lg:hidden h-[30px]"
+                className="cursor-pointer lg:hidden h-[30px] mt-[30px]"
                 onClick={() => setOpen(true)}
             >
                 <HiOutlineMenu className="text-3xl duration-150 hover:text-gray-600" />
