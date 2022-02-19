@@ -23,7 +23,7 @@ function Header() {
             <div className="container flex justify-between lg:block">
                 <header className="flex flex-col gap-5 lg:flex-row lg:items-center py-[30px]">
                     {/* left */}
-                    <div className="flex-1 flex flex-col gap-1">
+                    <div className="flex-1 flex flex-col gap-[6px]">
                         {/* icons on mobile view */}
                         <IconSet className="flex lg:hidden gap-4 items-center w-[245px] md:w-max flex-wrap max-h-10 overflow-hidden" />
 
