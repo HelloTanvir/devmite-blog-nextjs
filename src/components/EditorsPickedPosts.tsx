@@ -15,7 +15,7 @@ const EditorsPickedPosts = () => (
         {/* content */}
         <div className="flex gap-[30px] flex-col lg:flex-row">
             {/* highlighted post */}
-            <div className="flex flex-1 flex-col gap-[10px] shadow-lg">
+            <div className="flex flex-1 flex-col gap-[10px] shadow-lg dark:shadow-gray-800">
                 {/* image container */}
                 <div className="relative w-full h-[260px] lg:h-[210px] mb-3">
                     <Image
