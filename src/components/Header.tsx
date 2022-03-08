@@ -8,7 +8,7 @@ const headerDetails = { logoName: 'Devmite.com' };
 
 const headerNavLinks = [
     { href: '/', title: 'home' },
-    { href: '/', title: 'categories' },
+    { href: '/shop', title: 'shop' },
     { href: '/', title: 'business' },
     { href: '/', title: 'health' },
     { href: '/', title: 'design' },
@@ -39,7 +39,7 @@ function Header() {
                         </Link>
                     </div>
 
-                    <IconSet className="hidden lg:flex gap-8 items-center" />
+                    <IconSet className="items-center hidden gap-8 lg:flex" />
                 </header>
 
                 {/* menu/tab small device */}
