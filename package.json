@@ -4,6 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "type-check": "npx tsc -w --noEmitOnError",
     "install-lintDependencies": "yarn add -D prettier && yarn add -D babel-eslint && npx install-peerdeps --dev eslint-config-airbnb && yarn add -D eslint-config-prettier eslint-plugin-prettier@^3.4.0"
   },
   "dependencies": {
