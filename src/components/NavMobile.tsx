@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Router from 'next/router';
 import React, { useState } from 'react';
 import { HiOutlineMenu } from 'react-icons/hi';
 import { MdOutlineClose } from 'react-icons/md';
@@ -12,6 +13,9 @@ interface Props {
 
 const NavMobile = ({ headerNavLinks }: Props) => {
     const [open, setOpen] = useState(false);
+
+    Router.events.on('routeChangeComplete', () => setOpen(false));
+    Router.events.on('routeChangeError', () => setOpen(false));
 
     return (
         <>
