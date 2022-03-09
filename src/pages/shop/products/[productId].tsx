@@ -13,7 +13,7 @@ const ProductDetails = () => {
     const { productId } = router.query;
 
     const product = {
-        id: productId,
+        id: typeof productId === 'string' ? productId : 1,
         name: 'Premium Teeshirt Best High Quality',
         image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         price: 100,
